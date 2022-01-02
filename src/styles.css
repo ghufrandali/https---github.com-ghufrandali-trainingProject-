@@ -1,0 +1,28 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#mat-menu-panel-0>div {
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+button.mat-focus-indicator.mat-menu-item.ng-tns-c133-0 {
+    color: white;
+}
+
+button.mat-focus-indicator.mat-menu-item.ng-tns-c133-0:hover {
+    opacity: 0.5;
+}
+
+#mat-menu-panel-0>div>button>span {
+    color: white;
+}

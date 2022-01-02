@@ -1,0 +1,19 @@
+<mat-tab-group>
+    <mat-tab *ngFor="let project of projects" label="{{project.name}}">
+        <table class="employees">
+            <tr>
+                <th>name</th>
+                <th>job</th>
+                <th>salary</th>
+                <th>dob</th>
+                <th>is he fired</th>
+            </tr>
+            <tr *ngFor="let emp of project.employees">
+                <td>{{emp.name}}</td>
+                <td>{{emp.job}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.dob| date:'mediumDate'}}</td>
+                <td>{{emp.fired |yesNo}}</td>
+            </tr>
+        </table>
+    </mat-tab>

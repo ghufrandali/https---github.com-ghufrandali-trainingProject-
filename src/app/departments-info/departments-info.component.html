@@ -1,0 +1,34 @@
+<mat-tab-group>
+    <mat-tab *ngFor="let dept of Departments" label="{{dept.name}}">
+        <table class="employees">
+            <tr>
+                <th>name</th>
+                <th>job</th>
+                <th>salary</th>
+                <th>dob</th>
+                <th>is he fired</th>
+            </tr>
+            <tr *ngFor="let emp of dept.employees">
+                <td>{{emp.name}}</td>
+                <td>{{emp.job}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.dob| date:'mediumDate'}}</td>
+                <td>{{emp.fired |yesNo}}</td>
+            </tr>
+        </table>
+    </mat-tab>
+    <mat-tab label="Add New Department">
+        <form class="AddDep" [formGroup]="department" (ngSubmit)="OnSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Department Id:</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Department Name:</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+            <button mat-raised-button [disabled]="!department.valid " type="submit ">submit</button>
+            <button mat-raised-button (click)="department.reset() " type="button ">clear</button>
+        </form>
+    </mat-tab>
+</mat-tab-group>

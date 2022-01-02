@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="logo">
+        <h2>EMPLOYEE</h2>
+    </div>
+    <div>
+        <div class="nav-bar">
+            <div><a routerLink="/EmployeesInfo">Employees Info</a></div>
+            <div><a routerLink="/Form/ ">Add Employee</a></div>
+            <div><a routerLink="/DepartmentsInfo">Departments Info</a></div>
+            <!-- <div><a routerLink="/ProjectsInfo">Projects Info</a></div> -->
+            <!-- <div><a (click)="logout()">Log Out</a></div>-->
+        </div>
+        <div class="list-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16" [matMenuTriggerFor]="menu">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/EmployeesInfo">
+                  <span>Employees Info</span>
+                </button>
+                <button mat-menu-item routerLink="/Form/ ">
+                  <span>Add Employee</span>
+                </button>
+                <button mat-menu-item routerLink="/DepartmentsInfo">
+                  <span>Departments Info</span>
+                </button>
+                <!-- <button mat-menu-item routerLink="/ProjectsInfo">
+                  <span>Projects Info</span>
+                </button> -->
+                <!--<button (click)="logout()">
+                  <span>Log Out</span>
+                </button>-->
+            </mat-menu>
+        </div>
+    </div>
+</div>

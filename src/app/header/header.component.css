@@ -1,0 +1,69 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+* {
+    font-family: cursive;
+}
+
+.container {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo>h2 {
+    font-family: 'papyrus';
+    font-size: 25px;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: row;
+}
+
+.nav-bar>div {
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+.nav-bar>div:hover {
+    opacity: 0.5;
+}
+
+.nav-bar>div>a {
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+}
+
+.list-icon {
+    display: none;
+}
+
+svg {
+    cursor: pointer;
+}
+
+#mat-menu-panel-0>div {
+    padding: 0;
+}
+
+@media (max-width:800px) {
+    .nav-bar {
+        display: none;
+    }
+    .list-icon {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="container">
+    <form class="search-bar" (ngSubmit)="onSubmit()" [formGroup]="form">
+        <label>look for an employee:  </label>
+        <input type="text" formControlName="searchingText" placeholder="
+        Type Employee Name">
+        <button type="submit">search</button>
+        <button type="button" (click)="getEmployees()">Display All Employees</button>
+    </form>
+    <h2>Employees Information</h2>
+    <div class="content">
+        <table matSort *ngFor="let employee of employees; let i = index;" class="Employee-Fields" [class.manager]="employee.job==='manager' ">
+            <caption>{{employee.name |uppercase}}</caption>
+            <tr>
+                <td>job:</td>
+                <td>{{employee.job}}</td>
+            </tr>
+            <tr *ngIf="!employee.detailshown">
+                <td>salary:</td>
+                <td>{{employee.salary}}</td>
+            </tr>
+            <tr *ngIf="!employee.detailshown">
+                <td>department:</td>
+                <td>{{employee.department.name}}</td>
+            </tr>
+            <tr *ngIf="!employee.detailshown">
+                <td>DOB:</td>
+                <td>{{employee.dob | date:'mediumDate'}}</td>
+            </tr>
+
+            <button mat-raised-button (click)="show_more(i)" [disabled]="!employee.detailshown">show more</button>
+            <button mat-raised-button routerLink="/Form/{{employee.id}}">Edit Information</button>
+        </table>
+    </div>
+    <mat-paginator *ngIf="page" [length]="page.totalElements" [pageSize]="pageSize" [pageIndex]="pageNo" [pageSizeOptions]="pageSizeOptions" (page)="changePage($event)" aria-label="Select page">
+    </mat-paginator>
+</div>

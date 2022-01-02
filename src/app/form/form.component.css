@@ -1,0 +1,33 @@
+.form {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form>div {
+    margin: 10px;
+}
+
+.form>div>label {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    margin-right: 7px;
+    font-size: 20px;
+}
+
+.form>button {
+    width: 30%;
+    margin-top: 10px;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+@media (max-width: 400px) {
+    .form {
+        margin: 5px;
+    }
+}
